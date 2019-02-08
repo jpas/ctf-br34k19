@@ -4,6 +4,15 @@ services:
   crummy:
     container_name: crummy
     build: ./crummy
-    ports:
-      - '8080:8080'
     restart: always
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:crummy.$BASE_DOMAIN'
+      - 'traefik.docker.network=$TRAEFIK_NETWORK'
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external:
+      name: $TRAEFIK_NETWORK
