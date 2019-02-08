@@ -14,4 +14,6 @@ RUN pip install -r requirements.txt \
 
 COPY . /challenge
 
+EXPOSE 8080/tcp
+
 ENTRYPOINT python crummy.py
