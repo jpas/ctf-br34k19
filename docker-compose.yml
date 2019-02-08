@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  crummy:
+    container_name: crummy
+    build: ./crummy
+    ports:
+      - '8080:8080'
+    restart: always
