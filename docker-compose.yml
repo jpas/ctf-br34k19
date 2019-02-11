@@ -3,7 +3,7 @@ version: '3'
 services:
   crummy:
     container_name: crummy
-    build: ./crummy
+    build: ./web/crummy
     restart: always
     labels:
       - 'traefik.enable=true'
