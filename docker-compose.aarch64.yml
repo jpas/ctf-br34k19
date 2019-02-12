@@ -3,7 +3,7 @@ version: '3'
 services:
   noarms:
     container_name: noarms
-    build: ./pwn/n04rm5
+    build: ./pwn/n04rms
     restart: unless-stopped
     ports:
-      - '6002:6001'
+      - '6002:6002'
