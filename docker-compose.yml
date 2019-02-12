@@ -1,10 +1,21 @@
 version: '3'
 
 services:
+  ctfd:
+    container_name: ctfd
+    image: ctfd/ctfd
+    restart: unless-stopped
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.frontend.rule=Host:$BASE_DOMAIN'
+      - 'traefik.docker.network=$TRAEFIK_NETWORK'
+    networks:
+      - traefik
+
   crummy:
     container_name: crummy
     build: ./web/crummy
-    restart: always
+    restart: unless-stopped
     labels:
       - 'traefik.enable=true'
       - 'traefik.frontend.rule=Host:crummy.$BASE_DOMAIN'
