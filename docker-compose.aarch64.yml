@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  noarms:
+    container_name: noarms
+    build: ./pwn/n04rm5
+    restart: unless-stopped
+    ports:
+      - '6002:6001'
