@@ -23,6 +23,13 @@ services:
     networks:
       - traefik
 
+  overflow:
+    container_name: overflow
+    build: ./pwn/0v3rfl0w
+    restart: unless-stopped
+    ports:
+      - '6001:6001'
+
 networks:
   traefik:
     external:
