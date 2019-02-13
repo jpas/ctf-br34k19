@@ -3,7 +3,7 @@
 int learn() {
     char skill[64];
     gets(skill);
-    return skill[0] == '\0';
+    return skill[0] != '\0';
 }
 
 int main() {
