@@ -34,7 +34,7 @@ h = lambda x: hex(ZZ(x))
 print('N:')
 pretty(N)
 
-m = ZZ('0x' + hexlify(b'uofasec{u53_5tr0ng_pr1m35}'))
+m = ZZ('0x' + hexlify(b'br35k19{u53_5tr0ng_pr1m35}'))
 #print('message:', h(m))
 
 me = pow(m, E, N)

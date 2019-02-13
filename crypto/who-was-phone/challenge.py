@@ -68,10 +68,20 @@ def dphone(ct):
 
     return ''.join(pt).encode()
 
-pt = b'uofasec{th15_15_cr4zy_50_c411_m3_m4yb3}'
+pt = b'br34k19{th15_15_cr4zy_50_c411_m3_m4yb3}'
 ct = pt
 
 for e in [ephone, e32, e64, e85, rot13, e16]:
     ct = e(ct)
 
-print(ct.decode())
+def split_by_n(seq, n):
+    while seq:
+        yield seq[:n]
+        seq = seq[n:]
+
+def pretty(t, width=50):
+    for s in split_by_n(t, width):
+        print(s)
+
+
+pretty(ct.decode())
