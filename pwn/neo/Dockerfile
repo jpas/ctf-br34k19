@@ -12,4 +12,4 @@ RUN adduser --disabled-password pwn \
 
 USER pwn
 
-ENTRYPOINT socat TCP-LISTEN:6003,reuseaddr,fork EXEC:/home/pwn/0v3rfl0w
+ENTRYPOINT socat TCP-LISTEN:6003,reuseaddr,fork EXEC:/home/pwn/neo
