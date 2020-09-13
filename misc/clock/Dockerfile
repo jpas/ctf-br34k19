@@ -4,7 +4,8 @@ RUN apt-get update \
  && apt-get install -y socat python3
 
 WORKDIR /home/pwn
-COPY clock.py secret.py sounds ./
+COPY clock.py secret.py ./
+COPY sounds ./sounds
 
 RUN adduser --disabled-password pwn \
  && chown -R pwn:pwn /home/pwn \
@@ -12,4 +13,4 @@ RUN adduser --disabled-password pwn \
 
 USER pwn
 
-ENTRYPOINT socat TCP-LISTEN:6003,reuseaddr,fork EXEC:/home/pwn/clock.py
+ENTRYPOINT socat TCP-LISTEN:6003,nodelay,reuseaddr,fork EXEC:/home/pwn/clock.py

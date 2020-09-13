@@ -30,6 +30,13 @@ services:
     ports:
       - '6001:6001'
 
+  clock:
+    container_name: clock
+    build: ./misc/clock
+    restart: unless-stopped
+    ports:
+      - '6003:6003'
+
 networks:
   traefik:
     external:

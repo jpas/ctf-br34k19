@@ -95,6 +95,7 @@ def main():
             b64 = b64encode(f.read())
 
         print(f'--- Press enter for time {i}. ---')
+        input()
         print(b64)
         print(f'--- What time is it? ---')
 
